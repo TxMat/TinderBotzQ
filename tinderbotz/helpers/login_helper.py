@@ -33,19 +33,19 @@ class LoginHelper:
         self._click_login_button()
 
         # wait for google button to appear
-        xpath = '//*[@aria-label="Log in with Google"]'
-        try:
-            WebDriverWait(self.browser, self.delay).until(EC.presence_of_element_located(
-                (By.XPATH, xpath)))
-
-            self.browser.find_element(By.XPATH, xpath).click()
-
-        except TimeoutException:
-            self._exit_by_time_out()
-        except StaleElementReferenceException:
-            # page was still loading when attempting to click facebook login
-            time.sleep(4)
-            self.browser.find_element(By.XPATH, xpath).click()
+        # xpath = '//*[@aria-label="Log in with Google"]'
+        # try:
+        #     WebDriverWait(self.browser, self.delay).until(EC.presence_of_element_located(
+        #         (By.XPATH, xpath)))
+        #
+        #     self.browser.find_element(By.XPATH, xpath).click()
+        #
+        # except TimeoutException:
+        #     self._exit_by_time_out()
+        # except StaleElementReferenceException:
+        #     # page was still loading when attempting to click facebook login
+        #     time.sleep(4)
+        #     self.browser.find_element(By.XPATH, xpath).click()
 
         if not self._change_focus_to_pop_up():
             print("FAILED TO CHANGE FOCUS TO POPUP")
@@ -61,7 +61,7 @@ class LoginHelper:
             emailfield.send_keys(email)
             emailfield.send_keys(Keys.ENTER)
             # sleeping 3 seconds for passwordfield to come through
-            time.sleep(3)
+            time.sleep(3    )
         except TimeoutException:
             self._exit_by_time_out()
 

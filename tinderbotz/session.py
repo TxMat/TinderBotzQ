@@ -1,7 +1,7 @@
 # Selenium: automation of browser
 from selenium import webdriver
 # from webdriver_manager.chrome import ChromeDriverManager
-import undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -170,9 +170,10 @@ class Session:
     def login_using_google(self, email, password):
         self.email = email
         if not self._is_logged_in():
-            helper = LoginHelper(browser=self.browser)
-            helper.login_by_google(email, password)
-            time.sleep(5)
+            pass
+            # helper = LoginHelper(browser=self.browser)
+            # helper.login_by_google(email, password)
+            # time.sleep(5)
         if not self._is_logged_in():
             print('Manual interference is required.')
             input('press ENTER to continue')

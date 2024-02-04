@@ -27,6 +27,7 @@ class PreferencesHelper:
 
     def set_distance_range(self, km):
         # correct out of bounds values
+        link = ""
         if km > 160:
             final_percentage = 100
         elif km < 2:

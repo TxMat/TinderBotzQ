@@ -123,6 +123,9 @@ class Session:
         print(Printouts.BANNER.value)
         time.sleep(1)
 
+        print("Modified For ScaleX")
+        print("V1.0.0")
+
         self.started = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         print("Started session: {}\n\n".format(self.started))
 
@@ -169,11 +172,11 @@ class Session:
     # Actions of the session
     def login_using_google(self, email, password):
         self.email = email
-        if not self._is_logged_in():
-            pass
-            # helper = LoginHelper(browser=self.browser)
-            # helper.login_by_google(email, password)
-            # time.sleep(5)
+        # if not self._is_logged_in():
+        #     pass
+        #     # helper = LoginHelper(browser=self.browser)
+        #     # helper.login_by_google(email, password)
+        #     # time.sleep(5)
         if not self._is_logged_in():
             print('Manual interference is required.')
             input('press ENTER to continue')
